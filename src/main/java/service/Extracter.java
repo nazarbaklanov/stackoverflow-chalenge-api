@@ -13,9 +13,10 @@ import service.impl.ParserUserTagImpl;
 
 public class Extracter {
     private static final int LIMIT_PAGES = 10;
-    private static final int LIMIT_PAGESIZE = 25;
+    private static final int LIMIT_PAGE_SIZE = 100;
     private static final int TIME_THREAD_SLEEP = 3000;
     private static final int MIN_REPUTATION_POINTS = 223;
+    private static final String KEY = "eJdtWWka4oixta5gH0rW3Q((";
 
     public void extract() throws InterruptedException {
         JsonReader reader = new JsonReaderImpl();
@@ -27,12 +28,13 @@ public class Extracter {
                         + "page="
                         + pageNumber
                         + "&pagesize="
-                        + LIMIT_PAGESIZE
+                        + LIMIT_PAGE_SIZE
                         + "&order=desc&min="
                         + MIN_REPUTATION_POINTS
                         +"&sort=reputation&site=stackoverflow"
                         + "&filter=!gkOQYbF*7bn)h4UFlp5fK-3pYYE48hwZWPg"
-                        + "&key=eJdtWWka4oixta5gH0rW3Q((");
+                        + "&key="
+                        + KEY);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
