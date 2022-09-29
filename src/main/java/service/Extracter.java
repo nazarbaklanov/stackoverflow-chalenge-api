@@ -12,19 +12,21 @@ import service.impl.ParserItemImpl;
 import service.impl.ParserUserTagImpl;
 
 public class Extracter {
-    private static final int MAX_LIMIT_PAGES = 10;
+    private static final int LIMIT_PAGES = 10;
+    private static final int LIMIT_PAGESIZE = 25;
     private static final int TIME_THREAD_SLEEP = 3000;
 
     public void extract() throws InterruptedException {
         JsonReader reader = new JsonReaderImpl();
         JSONArray jsonArray;
-        for (int i = 1; i < MAX_LIMIT_PAGES; i++) {
+        for (int i = 1; i < LIMIT_PAGES; i++) {
             String pageNumber = String.valueOf(i);
             try {
                 jsonArray = reader.readJsonFromUrl("https://api.stackexchange.com/2.3/users?"
                         + "page="
                         + pageNumber
-                        + "&pagesize=100"
+                        + "&pagesize="
+                        + LIMIT_PAGESIZE
                         + "&order=desc&min=223&sort=reputation&site=stackoverflow"
                         + "&filter=!gkOQYbF*7bn)h4UFlp5fK-3pYYE48hwZWPg"
                         + "&key=eJdtWWka4oixta5gH0rW3Q((");
