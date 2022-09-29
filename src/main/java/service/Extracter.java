@@ -12,7 +12,7 @@ import service.impl.ParserItemImpl;
 import service.impl.ParserUserTagImpl;
 
 public class Extracter {
-    private static final int LIMIT_PAGES = 10;
+    private static final int LIMIT_PAGES = 1000;
     private static final int LIMIT_PAGE_SIZE = 100;
     private static final int TIME_THREAD_SLEEP = 3000;
     private static final int MIN_REPUTATION_POINTS = 223;
