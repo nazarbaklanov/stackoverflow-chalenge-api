@@ -15,6 +15,7 @@ public class Extracter {
     private static final int LIMIT_PAGES = 10;
     private static final int LIMIT_PAGESIZE = 25;
     private static final int TIME_THREAD_SLEEP = 3000;
+    private static final int MIN_REPUTATION_POINTS = 223;
 
     public void extract() throws InterruptedException {
         JsonReader reader = new JsonReaderImpl();
@@ -27,7 +28,9 @@ public class Extracter {
                         + pageNumber
                         + "&pagesize="
                         + LIMIT_PAGESIZE
-                        + "&order=desc&min=223&sort=reputation&site=stackoverflow"
+                        + "&order=desc&min="
+                        + MIN_REPUTATION_POINTS
+                        +"&sort=reputation&site=stackoverflow"
                         + "&filter=!gkOQYbF*7bn)h4UFlp5fK-3pYYE48hwZWPg"
                         + "&key=eJdtWWka4oixta5gH0rW3Q((");
             } catch (IOException e) {
