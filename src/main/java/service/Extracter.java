@@ -52,7 +52,8 @@ public class Extracter {
                         + usersId
                         + "/tags?page=1&pagesize=100&order=desc&sort=popular&site=stackoverflow"
                         + "&filter=!*MKI3RJrq_UbXSvj"
-                        + "&key=eJdtWWka4oixta5gH0rW3Q((";
+                        + "&key="
+                        + KEY;
                 JsonReader readerTag = new JsonReaderImpl();
                 JSONArray jsonArrayTags;
                 try {
