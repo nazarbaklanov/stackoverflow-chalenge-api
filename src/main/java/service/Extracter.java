@@ -15,7 +15,7 @@ import service.impl.ParserUserTagImpl;
 public class Extracter {
     private static final int LIMIT_PAGES = Integer.MAX_VALUE;
     private static final int LIMIT_PAGE_SIZE = 100;
-    private static final int TIME_THREAD_SLEEP = 1000;
+    private static final int TIME_THREAD_SLEEP = 2000;
     private static final int MIN_REPUTATION_POINTS = 223;
     private static final String KEY = "eJdtWWka4oixta5gH0rW3Q((";
     private static final String USERS_FILTER = "!gkOQYbF*7bn)h4UFlp5fK-3pYYE48hwZWPg";
