@@ -55,7 +55,7 @@ public class Extracter {
                     String path = "https://api.stackexchange.com/2.3/users/" + usersId
                             + "/tags?page=" + j
                             + "&pagesize=" + LIMIT_PAGE_SIZE
-                            + "100&order=desc&sort=popular&site=stackoverflow"
+                            + "&order=desc&sort=popular&site=stackoverflow"
                             + "&filter=" + TAGS_FILTER
                             + "&key=" + KEY;
                     JsonReader readerTag = new JsonReaderImpl();
