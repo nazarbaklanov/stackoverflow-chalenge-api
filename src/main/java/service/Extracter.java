@@ -13,15 +13,16 @@ import service.impl.ParserItemImpl;
 import service.impl.ParserUserTagImpl;
 
 public class Extracter {
-    private static final int LIMIT_PAGES = 1000;
+    private static final int LIMIT_PAGES = Integer.MAX_VALUE;
     private static final int LIMIT_PAGE_SIZE = 100;
-    private static final int TIME_THREAD_SLEEP = 2000;
+    private static final int TIME_THREAD_SLEEP = 1000;
     private static final int MIN_REPUTATION_POINTS = 223;
     private static final String KEY = "eJdtWWka4oixta5gH0rW3Q((";
     private static final String USERS_FILTER = "!gkOQYbF*7bn)h4UFlp5fK-3pYYE48hwZWPg";
     private static final String TAGS_FILTER = "!*MKI3RJrq_UbXSvj";
 
     public void extract() throws InterruptedException {
+        System.out.println("Processing the received list of users, wait...");
         JsonReader reader = new JsonReaderImpl();
         JSONArray jsonArray;
         for (int i = 1; i < LIMIT_PAGES; i++) {
@@ -35,6 +36,9 @@ public class Extracter {
                         + "&key=" + KEY);
             } catch (IOException e) {
                 throw new RuntimeException(e);
+            }
+            if (jsonArray.isEmpty()) {
+                break;
             }
 
             Parser<Item> parser = new ParserItemImpl();
